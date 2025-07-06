@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { SupportedLanguagesService } from './services/supported-languages.service';
+import { LanguageItem } from './components/language-selector/language-selector.component';
 
 @Component({
   selector: 'app-root',
@@ -10,41 +11,25 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'poc-translate';
 
-  private readonly supportedLanguagesMap = new Map<string, string>([
-    ['en', 'supported.english'],
-    ['es', 'supported.spanish']
-  ]);
+  readonly languageSelectorList: LanguageItem[]
 
-  private readonly translateToLanguageCodeMap: Map<string, string>;
-  
-  private readonly supportedLanguageCodes = Array.from(this.supportedLanguagesMap.keys());
-
-  private readonly supportedLanguageTranslateIds = Array.from(this.supportedLanguagesMap.values());
-
-  constructor(private translate: TranslateService) {
-    this.translate.addLangs(this.supportedLanguageCodes);
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
-
-    this.translateToLanguageCodeMap = new Map<string, string>();
-    this.supportedLanguagesMap.forEach((value, key) => {
-      console.log(`key: ${value}, value: ${key}`);
-      this.translateToLanguageCodeMap.set(value, key);
+  constructor(private supportedLanguagesService: SupportedLanguagesService) {
+    this.languageSelectorList = [];
+    this.supportedLanguagesService.getSupportedLanguagesMap().forEach((value, key) => {
+      this.languageSelectorList.push({ value: key, translateId: value })
     });
   }
 
   getAvailableLanguageCodes(): string[] {
-    return this.translate.getLangs();
+    return this.supportedLanguagesService.getAvailableLanguageCodes();
   }
 
   getAvailableLanguageTranslateIds(): string[] {
-    return this.supportedLanguageTranslateIds;
+    return this.supportedLanguagesService.getAvailableLanguageTranslateIds();
   }
 
-  onLanguageSelectionChange(event:Event) {
-    const translateId = (event.target as HTMLSelectElement).value;
-    const code = this.translateToLanguageCodeMap.get(translateId) || this.translate.defaultLang;
-    this.translate.use(code);
+  onLanguageSelectionChange(code: string) {
+    this.supportedLanguagesService.assignActiveLanguageIdFromCode(code);
   }
 
 }
