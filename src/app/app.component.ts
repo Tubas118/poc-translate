@@ -11,8 +11,13 @@ export class AppComponent {
   title = 'poc-translate';
 
   constructor(private translate: TranslateService) {
-    this.translate.addLangs(['en']);
+    this.translate.addLangs(['en', 'es']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
   }
+
+  getAvailableLanguages(): string[] {
+    return this.translate.getLangs();
+  }
+
 }
