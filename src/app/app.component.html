@@ -228,7 +228,12 @@
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
       <p>Main title: {{ 'main-title' | translate }}</p>
-      <p>Available languages: {{ getAvailableLanguages() }}</p>
+      <p>Available languages: {{ getAvailableLanguageCodes() }}</p>
+      <select (change)="onLanguageSelectionChange($event)">
+        <option *ngFor="let translateId of getAvailableLanguageTranslateIds()" [value]="translateId">
+          {{ translateId | translate }}
+        </option>
+      </select>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

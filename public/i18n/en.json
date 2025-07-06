@@ -1,3 +1,5 @@
 {
-  "main-title": "poc-translate in English"
+  "main-title": "poc-translate in English",
+  "supported.english": "English",
+  "supported.spanish": "Spanish"
 }
