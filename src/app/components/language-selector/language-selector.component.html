@@ -1,0 +1,3 @@
+<select (change)="onLanguageSelectionChange($event)">
+  <option *ngFor="let entry of items" [value]="entry?.value">{{ entry.translateId }} </option>
+</select>

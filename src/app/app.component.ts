@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LanguageItem } from './components/language-selector/language-selector.component';
+import { SupportedLanguagesService } from './services/supported-languages.service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +10,27 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'poc-translate';
+
+  readonly languageSelectorList: LanguageItem[]
+
+  constructor(private supportedLanguagesService: SupportedLanguagesService) {
+    this.languageSelectorList = [];
+    this.supportedLanguagesService.getSupportedLanguagesMap().forEach((value, key) => {
+      this.languageSelectorList.push({ value: key, translateId: value })
+    });
+  }
+
+  getAvailableLanguageCodes(): string[] {
+    return this.supportedLanguagesService.getAvailableLanguageCodes();
+  }
+
+  getAvailableLanguageTranslateIds(): string[] {
+    return this.supportedLanguagesService.getAvailableLanguageTranslateIds();
+  }
+
+  onLanguageSelectionChange(code: string) {
+    console.log(`Received: ${code}`);
+    this.supportedLanguagesService.assignActiveLanguageIdFromCode(code);
+  }
+  
 }

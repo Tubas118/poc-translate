@@ -20,12 +20,19 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "es": "public/i18n/messages.es.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/poc-translate",
             "index": "src/index.html",
+            "localize": true,
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -44,6 +51,18 @@
             "scripts": []
           },
           "configurations": {
+            "es": {
+              "localize": [
+                "es"
+              ],
+              "baseHref": "/es/"
+            },
+            "en": {
+              "localize": [
+                "en"
+              ],
+              "baseHref": "/en/"
+            },
             "production": {
               "budgets": [
                 {
@@ -75,6 +94,12 @@
             },
             "development": {
               "buildTarget": "poc-translate:build:development"
+            },
+            "en": {
+              "buildTarget": "poc-translate:build:en"
+            },
+            "es": {
+              "buildTarget": "poc-translate:build:es"
             }
           },
           "defaultConfiguration": "development"

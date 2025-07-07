@@ -227,6 +227,9 @@
       </svg>
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
+      <p>Main title: <span i18n="main-title">poc-translate in English</span></p>
+      <p>Available languages: {{ getAvailableLanguageCodes() }}</p>
+      <app-language-selector [items]="languageSelectorList" (languageSelectionChangeEvent)="onLanguageSelectionChange($event)"></app-language-selector>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
