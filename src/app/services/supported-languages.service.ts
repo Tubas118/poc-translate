@@ -1,23 +1,31 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
+import { environment } from '../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
 export class SupportedLanguagesService {
 
-  private readonly supportedLanguagesMap = new Map<string, string>([
-    ['en', 'supported.english'] as const,
-    ['es', 'supported.spanish'] as const
-  ]);
+  private readonly supportedLanguagesMap: Map<string, string>;
 
   private readonly translateToLanguageCodeMap: Map<string, string>;
   
-  private readonly supportedLanguageCodes = Array.from(this.supportedLanguagesMap.keys());
+  private readonly supportedLanguageCodes;
 
-  private readonly supportedLanguageTranslateIds = Array.from(this.supportedLanguagesMap.values());
+  private readonly supportedLanguageTranslateIds;
 
   constructor(private translate: TranslateService) {
+    this.supportedLanguagesMap = new Map<string, string>();
+
+    environment.supportedLanguages.forEach(entry => {
+      this.supportedLanguagesMap.set(entry[0], entry[1]);
+    });
+
+    this.supportedLanguageCodes = Array.from(this.supportedLanguagesMap.keys());
+    this.supportedLanguageTranslateIds = Array.from(this.supportedLanguagesMap.values());
+
     this.translate.addLangs(this.supportedLanguageCodes);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
