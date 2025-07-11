@@ -1,0 +1,13 @@
+{
+  "avail-lang.label": "שפות זמינות",
+  "complete-form.label": ".מלאו את הטופס כדי להפעיל את הכפתור",
+  "congrats.label": "מזל טוב! האפליקציה שלך פועלת",
+  "first-name.label": "שֵׁם פְּרַטִי",
+  "hello.label": "שלום",
+  "last-name.label": "שֵׁם מִשׁפָּחָה",
+  "main-title": "poc-translate באנגלית",
+  "main-title.label": "כותרת ראשית",
+  "supported.english": "אַנגְלִית",
+  "supported.hebrew": "עִברִית",
+  "supported.spanish": "סְפָרַדִית"
+}

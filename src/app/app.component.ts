@@ -11,25 +11,29 @@ import { LanguageItem } from './components/language-selector/language-selector.c
 export class AppComponent {
   title = 'poc-translate';
 
-  readonly languageSelectorList: LanguageItem[]
+  // readonly languageSelectorList: LanguageItem[]
 
   constructor(private supportedLanguagesService: SupportedLanguagesService) {
-    this.languageSelectorList = [];
-    this.supportedLanguagesService.getSupportedLanguagesMap().forEach((value, key) => {
-      this.languageSelectorList.push({ value: key, translateId: value })
-    });
+    // this.languageSelectorList = [];
+    // this.supportedLanguagesService.getSupportedLanguagesMap().forEach((value, key) => {
+    //   this.languageSelectorList.push({ value: key, translateId: value })
+    // });
   }
 
-  getAvailableLanguageCodes(): string[] {
-    return this.supportedLanguagesService.getAvailableLanguageCodes();
+  get langDir(): string {
+    return this.supportedLanguagesService?.langDir;
   }
 
-  getAvailableLanguageTranslateIds(): string[] {
-    return this.supportedLanguagesService.getAvailableLanguageTranslateIds();
-  }
+  // getAvailableLanguageCodes(): string[] {
+  //   return this.supportedLanguagesService.getAvailableLanguageCodes();
+  // }
 
-  onLanguageSelectionChange(code: string) {
-    this.supportedLanguagesService.assignActiveLanguageIdFromCode(code);
-  }
+  // getAvailableLanguageTranslateIds(): string[] {
+  //   return this.supportedLanguagesService.getAvailableLanguageTranslateIds();
+  // }
+
+  // onLanguageSelectionChange(code: string) {
+  //   this.supportedLanguagesService.assignActiveLanguageIdFromCode(code);
+  // }
 
 }

@@ -1,5 +1,13 @@
 {
-  "main-title": "poc-translate in Spanish",
+  "avail-lang.label": "Idiomas disponibles",
+  "complete-form.label": "Complete el formulario para habilitar el botón.",
+  "congrats.label": "¡Felicitaciones! Tu aplicación ya está funcionando.",
+  "first-name.label": "Nombre de pila",
+  "hello.label": "Hola",
+  "last-name.label": "Apellido",
+  "main-title": "poc-translate en español",
+  "main-title.label": "Título principal",
   "supported.english": "Inglés",
+  "supported.hebrew": "Hebreo",
   "supported.spanish": "Español"
 }

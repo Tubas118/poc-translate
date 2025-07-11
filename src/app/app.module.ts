@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import { AngularLogoComponent } from './components/angular-logo/angular-logo.component';
 import { LinksComponent } from './components/links/links.component';
+import { TranslatePanelComponent } from './components/translate-panel/translate-panel.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './i18n/', '.json');
@@ -19,11 +21,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     LanguageSelectorComponent,
     AngularLogoComponent,
-    LinksComponent
+    LinksComponent,
+    TranslatePanelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

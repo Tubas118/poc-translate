@@ -1,5 +1,13 @@
 {
+  "avail-lang.label": "Available languages",
+  "complete-form.label": "Complete the form to enable button.",
+  "congrats.label": "Congratulations! Your app is running",
+  "first-name.label": "First Name",
+  "hello.label": "Hello",
+  "last-name.label": "Last Name",
   "main-title": "poc-translate in English",
+  "main-title.label": "Main Title",
   "supported.english": "English",
+  "supported.hebrew": "Hebrew",
   "supported.spanish": "Spanish"
 }
