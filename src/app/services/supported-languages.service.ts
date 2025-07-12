@@ -71,6 +71,18 @@ export class SupportedLanguagesService {
     this.assignActiveLanguageIdFromCodeWorker(code);
   }
 
+  get supportedLanguage_english(): string {
+    return $localize`:@@supported.english:English`;
+  }
+
+  get supportedLanguage_hebrew(): string {
+    return $localize`:@@supported.hebrew:Hebrew`;
+  }
+
+  get supportedLanguage_spanish(): string {
+    return $localize`:@@supported.spanish:Spanish`;
+  }
+
   private assignActiveLanguageIdFromCodeWorker(code: string): void {
     const supportedLanguage = this.supportedLanguagesMap.get(code);
     this.langRtl = supportedLanguage?.rtl;

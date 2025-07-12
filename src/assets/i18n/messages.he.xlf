@@ -58,6 +58,30 @@
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="supported.english" datatype="html">
+        <source>English</source>
+        <target>אַנגְלִית</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/supported-languages.service.ts</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="supported.hebrew" datatype="html">
+        <source>Hebrew</source>
+        <target>עִברִית</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/supported-languages.service.ts</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="supported.spanish" datatype="html">
+        <source>Spanish</source>
+        <target>סְפָרַדִית</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/supported-languages.service.ts</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
