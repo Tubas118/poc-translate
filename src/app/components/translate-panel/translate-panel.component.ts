@@ -26,7 +26,7 @@ export class TranslatePanelComponent {
   constructor(private supportedLanguagesService: SupportedLanguagesService) {
     this.languageSelectorList = [];
     this.supportedLanguagesService.getSupportedLanguagesMap().forEach((value, key) => {
-      this.languageSelectorList.push({ value: key, translateId: value?.id })
+      this.languageSelectorList.push({ value: key, displayValue: value?.id })
     });
 
     this.profileForm = new FormGroup({

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export interface LanguageItem {
-  translateId: string;
+  displayValue: string;
   value: string;
 }
 

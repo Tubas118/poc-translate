@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
 import { environment } from '../../environments/environment';
 
@@ -18,7 +17,7 @@ export class SupportedLanguagesService {
 
   private langRtl?: boolean;
 
-  constructor(private translate: TranslateService) {
+  constructor() {
     this.supportedLanguagesMap = new Map<string, SupportedLanguage>();
 
     environment.supportedLanguages.forEach(entry => {
@@ -32,9 +31,9 @@ export class SupportedLanguagesService {
 
     this.supportedLanguageCodes = Array.from(this.supportedLanguagesMap.keys());
 
-    this.translate.addLangs(this.supportedLanguageCodes);
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+    // this.translate.addLangs(this.supportedLanguageCodes);
+    // this.translate.setDefaultLang('en');
+    // this.translate.use('en');
 
     this.translateToLanguageCodeMap = new Map<string, string>();
     this.supportedLanguagesMap.forEach((value, key) => {
@@ -53,7 +52,8 @@ export class SupportedLanguagesService {
   }
 
   getAvailableLanguageCodes(): string[] {
-    return this.translate.getLangs();
+    return [];
+    // return this.translate.getLangs();
   }
 
   getAvailableLanguageTranslateIds(): string[] {
@@ -62,7 +62,8 @@ export class SupportedLanguagesService {
 
   onLanguageSelectionChange(event:Event): void {
     const translateId = (event.target as HTMLSelectElement).value;
-    const code = this.translateToLanguageCodeMap.get(translateId) || this.translate.defaultLang;
+    //const code = this.translateToLanguageCodeMap.get(translateId) || this.translate.defaultLang;
+    const code = 'en';
     this.assignActiveLanguageIdFromCodeWorker(code);
   }
 
@@ -73,7 +74,7 @@ export class SupportedLanguagesService {
   private assignActiveLanguageIdFromCodeWorker(code: string): void {
     const supportedLanguage = this.supportedLanguagesMap.get(code);
     this.langRtl = supportedLanguage?.rtl;
-    this.translate.use(code);
+    // this.translate.use(code);
   }
 
 }

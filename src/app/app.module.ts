@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,19 +9,6 @@ import { AngularLogoComponent } from './components/angular-logo/angular-logo.com
 import { LinksComponent } from './components/links/links.component';
 import { TranslatePanelComponent } from './components/translate-panel/translate-panel.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
-
-// const TRANSLATE_MODULE = TranslateModule.forRoot({
-//       defaultLanguage: 'en',
-//       loader: {
-//         provide: TranslateLoader,
-//         useFactory: (HttpLoaderFactory),
-//         deps: [HttpClient]
-//       }
-//     });
 
 @NgModule({
   declarations: [
@@ -37,18 +22,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    TranslateModule.forRoot({
-      defaultLanguage: 'en',
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (HttpLoaderFactory),
-        deps: [HttpClient]
-      }
-    })
-  ],
-  exports: [
-    TranslateModule
+    ReactiveFormsModule
   ],
   providers: [
     // provideHttpClient()

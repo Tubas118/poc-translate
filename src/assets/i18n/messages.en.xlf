@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="hello.label" datatype="html">
+        <source>Hello</source>
+        <target>Hello</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="congrats.label" datatype="html">
+        <source>Congratulations! Your app is running</source>
+        <target>Congratulations! Your app is running</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="main-title.label" datatype="html">
+        <source>poc-translate in English</source>
+        <target>poc-translate in English</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="avail-lang.label" datatype="html">
+        <source>Available languages</source>
+        <target></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="first-name.label" datatype="html">
+        <source>First Name</source>
+        <target>Available languages</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="last-name.label" datatype="html">
+        <source>Last Name</source>
+        <target>Last Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="complete-form.label" datatype="html">
+        <source>Complete the form to enable button.</source>
+        <target>Complete the form to enable button.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

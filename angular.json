@@ -20,6 +20,14 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "xx",
+        "locales": {
+          "en": "src/assets/i18n/messages.en.xlf",
+          "es": "src/assets/i18n/messages.es.xlf",
+          "he": "src/assets/i18n/messages.he.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -42,6 +50,24 @@
             "scripts": []
           },
           "configurations": {
+            "en": {
+              "localize": [
+                "en"
+              ],
+              "baseHref": "/en/"
+            },
+            "es": {
+              "localize": [
+                "es"
+              ],
+              "baseHref": "/es/"
+            },
+            "he": {
+              "localize": [
+                "he"
+              ],
+              "baseHref": "/he/"
+            },
             "production": {
               "budgets": [
                 {
@@ -67,7 +93,19 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "poc-translate:build"
+          },
           "configurations": {
+            "en": {
+              "browserTarget": "poc-translate:build:en"
+            },
+            "es": {
+              "browserTarget": "poc-translate:build:es"
+            },
+            "he": {
+              "browserTarget": "poc-translate:build:he"
+            },
             "production": {
               "browserTarget": "poc-translate:build:production"
             },
@@ -78,7 +116,10 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "poc-translate:build"
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
