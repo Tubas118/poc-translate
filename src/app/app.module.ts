@@ -16,15 +16,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-// const TRANSLATE_MODULE = TranslateModule.forRoot({
-//       defaultLanguage: 'en',
-//       loader: {
-//         provide: TranslateLoader,
-//         useFactory: (HttpLoaderFactory),
-//         deps: [HttpClient]
-//       }
-//     });
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,9 +47,3 @@ export function HttpLoaderFactory(http: HttpClient) {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-/*
-    "@ngx-translate/core": "^16.0.4",
-    "@ngx-translate/http-loader": "^16.0.1",
-
-*/
