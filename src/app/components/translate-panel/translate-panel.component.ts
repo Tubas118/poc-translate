@@ -7,12 +7,15 @@ import { FormControl, FormGroup } from '@angular/forms';
   selector: 'app-translate-panel',
   standalone: false,
   templateUrl: './translate-panel.component.html',
-  styleUrl: './translate-panel.component.scss'
+  styleUrls: ['./translate-panel.component.scss']
 })
 export class TranslatePanelComponent {
 
   @Input()
   title?: string;
+
+  @Input()
+  subtitle?: string;
 
   profileForm: FormGroup;
 

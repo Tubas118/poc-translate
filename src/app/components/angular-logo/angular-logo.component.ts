@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-angular-logo',
   standalone: false,
   templateUrl: './angular-logo.component.html',
-  styleUrl: './angular-logo.component.scss'
+  styleUrls: ['./angular-logo.component.scss']
 })
 export class AngularLogoComponent {
 
