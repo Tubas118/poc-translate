@@ -9,7 +9,7 @@ import { SupportedLanguagesService } from './services/supported-languages.servic
 })
 export class AppComponent {
   title = 'poc-translate';
-  subtitle = '(i18n)';
+  subtitle = '(convert i18n to ngx-translate)';
 
   constructor(private supportedLanguagesService: SupportedLanguagesService) {
   }

@@ -1,24 +1,24 @@
-<h1><span i18n="@@hello.label">Hello</span>, {{ title }}</h1>
+<h1><span>{{ 'hello.label' | translate }}</span>, {{ title }}</h1>
 <h2 class="shift-up"><span>{{ subtitle }}</span></h2>
-<p><span i18n="@@congrats.label">Congratulations! Your app is running</span>. 🎉</p>
-<p><span i18n="@@main-title.label">poc-translate in English</span></p>
-<p><span i18n="@@avail-lang.label">Available languages</span>: {{ getAvailableLanguageCodes() }}</p>
+<p><span>{{ 'congrats.label' | translate }}</span>. 🎉</p>
+<p><span>{{ 'main-title.label' | translate }}</span></p>
+<p><span>{{ 'avail-lang.label' | translate }}</span>: {{ getAvailableLanguageCodes() }}</p>
 <app-language-selector
   class="element-height"
-  [items]="languageSelectorList" 
+  [items]="languageSelectorList"
   (languageSelectionChangeEvent)="onLanguageSelectionChange($event)"></app-language-selector>
 
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <div class="element-height">
-    <label for="first-name"><span i18n="@@first-name.label">First Name</span>: </label>
+    <label for="first-name"><span>{{ 'first-name.label' | translate }}</span>: </label>
     <input id="first-name" type="text" formControlName="firstName" />
   </div>
   <div class="element-height">
-    <label for="last-name"><span i18n="@@last-name.label">Last Name</span>: </label>
+    <label for="last-name"><span>{{ 'last-name.label' | translate }}</span>: </label>
     <input id="last-name" type="text" formControlName="lastName" />
   </div>
   <div class="element-height">
-    <p i18n="@@complete-form.label">Complete the form to enable button.</p>
+    <p>{{ 'complete-form.label' | translate }}</p>
     <button type="submit" [disabled]="!profileForm.valid">Submit</button>
   </div>
 </form>

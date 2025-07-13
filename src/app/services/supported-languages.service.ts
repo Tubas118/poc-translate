@@ -1,23 +1,29 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 import { environment } from '../../environments/environment';
+import { take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SupportedLanguagesService {
+export class SupportedLanguagesService implements OnInit {
 
   private readonly supportedLanguagesMap: Map<string, SupportedLanguage>;
 
   private readonly translateToLanguageCodeMap: Map<string, string>;
-  
+
   private readonly supportedLanguageCodes;
 
   private readonly supportedLanguageTranslateIds;
 
   private langRtl?: boolean;
 
-  constructor() {
+  private supportedLang_english?: string;
+  private supportedLang_hebrew?: string;
+  private supportedLang_spanish?: string;
+
+  constructor(private translate: TranslateService) {
     this.supportedLanguagesMap = new Map<string, SupportedLanguage>();
 
     environment.supportedLanguages.forEach(entry => {
@@ -31,16 +37,20 @@ export class SupportedLanguagesService {
 
     this.supportedLanguageCodes = Array.from(this.supportedLanguagesMap.keys());
 
-    // this.translate.addLangs(this.supportedLanguageCodes);
-    // this.translate.setDefaultLang('en');
-    // this.translate.use('en');
-
     this.translateToLanguageCodeMap = new Map<string, string>();
     this.supportedLanguagesMap.forEach((value, key) => {
       this.translateToLanguageCodeMap.set(value.id, key);
     });
 
     this.supportedLanguageTranslateIds = Array.from(this.translateToLanguageCodeMap.values());
+  }
+
+  ngOnInit(): void {
+    this.translate.addLangs(this.supportedLanguageCodes);
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+
+    this.updateSupportedLanguages();
   }
 
   get langDir(): string {
@@ -52,8 +62,7 @@ export class SupportedLanguagesService {
   }
 
   getAvailableLanguageCodes(): string[] {
-    return [];
-    // return this.translate.getLangs();
+    return this.translate.getLangs();
   }
 
   getAvailableLanguageTranslateIds(): string[] {
@@ -62,8 +71,7 @@ export class SupportedLanguagesService {
 
   onLanguageSelectionChange(event:Event): void {
     const translateId = (event.target as HTMLSelectElement).value;
-    //const code = this.translateToLanguageCodeMap.get(translateId) || this.translate.defaultLang;
-    const code = 'en';
+    const code = this.translateToLanguageCodeMap.get(translateId) || this.translate.defaultLang;
     this.assignActiveLanguageIdFromCodeWorker(code);
   }
 
@@ -72,22 +80,40 @@ export class SupportedLanguagesService {
   }
 
   get supportedLanguage_english(): string {
-    return $localize`:@@supported.english:English`;
+    return this.supportedLang_english || '';
   }
 
   get supportedLanguage_hebrew(): string {
-    return $localize`:@@supported.hebrew:Hebrew`;
+    return this.supportedLang_hebrew || '';
   }
 
   get supportedLanguage_spanish(): string {
-    return $localize`:@@supported.spanish:Spanish`;
+    return this.supportedLang_spanish || '';
   }
 
   private assignActiveLanguageIdFromCodeWorker(code: string): void {
     const supportedLanguage = this.supportedLanguagesMap.get(code);
     this.langRtl = supportedLanguage?.rtl;
-    // this.translate.use(code);
+    this.translate.use(code);
+    this.updateSupportedLanguages();
   }
+
+  private updateSupportedLanguages() {
+    this.translate.get('supported.english').pipe(take(1))
+      .subscribe(value => {
+        this.supportedLang_english = value;
+      });
+
+    this.translate.get('supported.hebrew').pipe(take(1))
+      .subscribe(value => {
+        this.supportedLang_hebrew = value;
+      });
+
+    this.translate.get('supported.spanish').pipe(take(1))
+      .subscribe(value => {
+        this.supportedLang_spanish = value;
+      });
+   }
 
 }
 

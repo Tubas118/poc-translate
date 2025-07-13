@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 export interface LanguageItem {
   displayValue: string;
@@ -19,7 +20,7 @@ export class LanguageSelectorComponent {
   @Output()
   languageSelectionChangeEvent = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(public translate: TranslateService) { }
   
   onLanguageSelectionChange(event: Event): void {
     const value = (event.target as HTMLSelectElement).value;
