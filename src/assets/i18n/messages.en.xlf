@@ -28,7 +28,7 @@
       </trans-unit>
       <trans-unit id="avail-lang.label" datatype="html">
         <source>Available languages</source>
-        <target></target>
+        <target>Available languages</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
           <context context-type="linenumber">5</context>
@@ -36,7 +36,7 @@
       </trans-unit>
       <trans-unit id="first-name.label" datatype="html">
         <source>First Name</source>
-        <target>Available languages</target>
+        <target>First Name</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
           <context context-type="linenumber">13</context>
