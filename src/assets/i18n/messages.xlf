@@ -1,75 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="xx" datatype="plaintext" original="ng2.template">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="hello.label" datatype="html">
-        <source>Hello</source>
+        <source><x id="INTERPOLATION" equiv-text="{{ &apos;hello.label&apos; | translate }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="congrats.label" datatype="html">
-        <source>Congratulations! Your app is running</source>
+      <trans-unit id="check-new-text" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ &apos;check-new-text&apos; | translate }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="main-title.label" datatype="html">
-        <source>poc-translate in English</source>
+      <trans-unit id="congrats.label" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ &apos;congrats.label&apos; | translate }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="avail-lang.label" datatype="html">
-        <source>Available languages</source>
+      <trans-unit id="main-title.label" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ &apos;main-title.label&apos; | translate }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="first-name.label" datatype="html">
-        <source>First Name</source>
+      <trans-unit id="avail-lang.label" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ &apos;avail-lang.label&apos; | translate }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="first-name.label" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ &apos;first-name.label&apos; | translate }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="last-name.label" datatype="html">
-        <source>Last Name</source>
+        <source><x id="INTERPOLATION" equiv-text="{{ &apos;last-name.label&apos; | translate }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="complete-form.label" datatype="html">
-        <source>Complete the form to enable button.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/translate-panel/translate-panel.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="supported.english" datatype="html">
-        <source>English</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/services/supported-languages.service.ts</context>
-          <context context-type="linenumber">75</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="supported.hebrew" datatype="html">
-        <source>Hebrew</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/services/supported-languages.service.ts</context>
-          <context context-type="linenumber">79</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="supported.spanish" datatype="html">
-        <source>Spanish</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/services/supported-languages.service.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
     </body>

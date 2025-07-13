@@ -1,9 +1,9 @@
 <h1><span i18n="@@hello.label">{{ 'hello.label' | translate }}</span>, {{ title }}</h1>
 <h2 class="shift-up"><span>{{ subtitle }}</span></h2>
 <h3 class="shift-up"><span i18n="@@check-new-text">{{ 'check-new-text' | translate }}</span></h3>
-<p><span>{{ 'congrats.label' | translate }}</span>. 🎉</p>
-<p><span>{{ 'main-title.label' | translate }}</span></p>
-<p><span>{{ 'avail-lang.label' | translate }}</span>: {{ getAvailableLanguageCodes() }}</p>
+<p><span i18n="@@congrats.label">{{ 'congrats.label' | translate }}</span>. 🎉</p>
+<p><span i18n="@@main-title.label">{{ 'main-title.label' | translate }}</span></p>
+<p><span i18n="@@avail-lang.label">{{ 'avail-lang.label' | translate }}</span>: {{ getAvailableLanguageCodes() }}</p>
 <app-language-selector
   class="dropdown-height"
   [items]="languageSelectorList"
@@ -11,12 +11,12 @@
 
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <div class="textbox">
-    <label for="profile-first-name"><span>{{ 'first-name.label' | translate }}</span>: </label>
-    <input id="profile-first-name" type="text" formControlName="firstName" autocomplete="off"/>
+    <label for="first-name"><span i18n="@@first-name.label">{{ 'first-name.label' | translate }}</span>: </label>
+    <input id="first-name" type="text" formControlName="firstName" autocomplete="off"/>
   </div>
   <div class="textbox">
-    <label for="profile-last-name"><span>{{ 'last-name.label' | translate }}</span>: </label>
-    <input id="profile-last-name" type="text" formControlName="lastName" autocomplete="off"/>
+    <label for="last-name"><span i18n="@@last-name.label">{{ 'last-name.label' | translate }}</span>: </label>
+    <input id="last-name" type="text" formControlName="lastName" autocomplete="off"/>
   </div>
   <div class="element-height">
     <p>{{ 'complete-form.label' | translate }}</p>
