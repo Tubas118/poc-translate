@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 import { environment } from '../../environments/environment';
@@ -7,7 +7,7 @@ import { take } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class SupportedLanguagesService implements OnInit {
+export class SupportedLanguagesService {
 
   private readonly supportedLanguagesMap: Map<string, SupportedLanguage>;
 
@@ -24,6 +24,7 @@ export class SupportedLanguagesService implements OnInit {
   private supportedLang_spanish?: string;
 
   constructor(private translate: TranslateService) {
+
     this.supportedLanguagesMap = new Map<string, SupportedLanguage>();
 
     environment.supportedLanguages.forEach(entry => {
@@ -43,12 +44,8 @@ export class SupportedLanguagesService implements OnInit {
     });
 
     this.supportedLanguageTranslateIds = Array.from(this.translateToLanguageCodeMap.values());
-  }
 
-  ngOnInit(): void {
     this.translate.addLangs(this.supportedLanguageCodes);
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
 
     this.updateSupportedLanguages();
   }

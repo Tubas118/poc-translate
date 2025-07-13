@@ -4,18 +4,18 @@
 <p><span>{{ 'main-title.label' | translate }}</span></p>
 <p><span>{{ 'avail-lang.label' | translate }}</span>: {{ getAvailableLanguageCodes() }}</p>
 <app-language-selector
-  class="element-height"
+  class="dropdown-height"
   [items]="languageSelectorList"
   (languageSelectionChangeEvent)="onLanguageSelectionChange($event)"></app-language-selector>
 
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-  <div class="element-height">
-    <label for="first-name"><span>{{ 'first-name.label' | translate }}</span>: </label>
-    <input id="first-name" type="text" formControlName="firstName" />
+  <div class="textbox">
+    <label for="profile-first-name"><span>{{ 'first-name.label' | translate }}</span>: </label>
+    <input id="profile-first-name" type="text" formControlName="firstName" autocomplete="off"/>
   </div>
-  <div class="element-height">
-    <label for="last-name"><span>{{ 'last-name.label' | translate }}</span>: </label>
-    <input id="last-name" type="text" formControlName="lastName" />
+  <div class="textbox">
+    <label for="profile-last-name"><span>{{ 'last-name.label' | translate }}</span>: </label>
+    <input id="profile-last-name" type="text" formControlName="lastName" autocomplete="off"/>
   </div>
   <div class="element-height">
     <p>{{ 'complete-form.label' | translate }}</p>

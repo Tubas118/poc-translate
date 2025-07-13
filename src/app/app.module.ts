@@ -11,12 +11,9 @@ import { AngularLogoComponent } from './components/angular-logo/angular-logo.com
 import { LinksComponent } from './components/links/links.component';
 import { TranslatePanelComponent } from './components/translate-panel/translate-panel.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  //   console.log(`HttpLoaderFactory before load`);
   return new XlfReaderTranslateLoader(http, './assets/i18n/messages', '.xlf');
-  // return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -33,7 +30,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     ReactiveFormsModule,
     TranslateModule.forRoot({
-      // defaultLanguage: 'en',
+      defaultLanguage: 'en',
       loader: {
         provide: TranslateLoader,
         useFactory: (HttpLoaderFactory),

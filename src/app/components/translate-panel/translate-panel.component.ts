@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { LanguageItem } from '../language-selector/language-selector.component';
 import { SupportedLanguagesService } from '../../services/supported-languages.service';
 import { FormControl, FormGroup } from '@angular/forms';
-import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { take } from 'rxjs/operators';
 
 @Component({
@@ -45,12 +45,9 @@ export class TranslatePanelComponent {
 
   onLanguageSelectionChange(code: string) {
     this.supportedLanguagesService.assignActiveLanguageIdFromCode(code);
-    // console.log(`onLanguageSelectionChange - hello.label=${this.translate?.get('hello.label')}}`);
   }
 
   onSubmit(): void {
-    // console.log(`form: ${JSON.stringify(this.profileForm?.value)}`);
-    // console.log(`onSubmit - hello.label=${this.translate?.get('hello.label')}}`);
     this.translate.get('hello.label').pipe(take(1)).subscribe(value => console.log(`onSubmit: ${value}`));
     const submitted = this.profileForm.value;
     this.displayName = `${submitted.firstName} ${submitted.lastName}`.trim();
